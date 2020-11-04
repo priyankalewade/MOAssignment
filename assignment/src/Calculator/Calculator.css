@@ -1,0 +1,11 @@
+.calculatorBack{
+	background-color: #ff0;
+	font-size: 15px;
+	padding:20px;
+}
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #ccc;
+  letter-spacing: 1px;
+}
