@@ -1,11 +1,37 @@
 .calculatorBack{
-	background-color: #ff0;
+	background-color:#3c8dbc;
 	font-size: 15px;
-	padding:20px;
+	padding:30px;
+	margin-top: 100px;
+	font-family: cursive;
 }
 .form-control {
   border-radius: 0;
+  border:;
   box-shadow: none;
   border-color: #ccc;
   letter-spacing: 1px;
+}
+.inputBack{
+	background-color: #fff;
+	padding: 20px;
+	margin-top: -100px !important;
+	box-shadow: 0px 0px 10px #aaa;
+
+}
+.operatorBack{
+	background-color: #fff;
+	font-size: 20px;
+	padding: 20px;
+	box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+	cursor: pointer;
+	text-align: center;
+	margin-top: 15px;
+	border-radius: 3px;
+}
+.operatorBack:hover{
+  box-shadow: 0px 0px 10px #aaa;
+}
+.mt15{
+	margin-top: 15px;
 }
