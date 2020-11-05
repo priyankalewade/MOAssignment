@@ -15,6 +15,22 @@ class Addition extends Component {
       calculatedValue: 0,     
     }
   }
+  componentDidMount()
+  {
+    console.log("nextProps");
+    if(this.props.firstValue == "" || this.props.secondValue == "")
+    {
+      this.setState({
+        calculatedValue: 0
+      })
+      this.props.calculateOperationData(this.state.calculatedValue)
+    }
+    
+  }
+  componentWillReciveProps(nextProps)
+  {
+    console.log("nextProps",nextProps);
+  }
 
   Add(event) {
     event.preventDefault();

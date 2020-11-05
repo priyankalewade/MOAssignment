@@ -12,8 +12,8 @@ const reducer = (state = initialState, action) => {
 	// Define action
 	if(action.type === "ADDITION"){
 		newState.calculatedValue 	= action.calculatedValue;
-		newState.firstValue 	= action.firstValue;
-		newState.secondValue 	= action.secondValue;
+		// newState.firstValue 	= action.firstValue;
+		// newState.secondValue 	= action.secondValue;
 
 	}
 	if(action.type === "SUBTRACTION"){
