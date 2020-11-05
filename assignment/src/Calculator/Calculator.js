@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Calculator.css';
 
-// import componennt
+// imported componennt
 import Addition       from './Addition/Addition.js';
 import Subtraction    from './Subtraction/Subtraction.js';
 import Multiplication from './Multiplication/Multiplication.js';
 import Division       from './Division/Division.js';
-import Result         from './Result/Result.js';
 
 class Calculator extends Component {
 
@@ -27,6 +26,7 @@ class Calculator extends Component {
     this.setState({
       [name]: event.target.value,
     },()=>{
+      // If data is cleared of input result will be cleared
       if(this.state.firstValue == "" || this.state.secondValue == "")
       {
         this.setState({
@@ -42,7 +42,6 @@ class Calculator extends Component {
       <div  className="col-lg-12  col-md-12 col-sm-12 col-xs-12 ">
         <div className="heading">Calculator</div>
         <div  className="col-lg-4 col-lg-offset-4  col-md-12 col-sm-12 col-xs-12 calculatorBack">
-         
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt15 inputBack">
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <label>Enter Value 1</label>
@@ -70,11 +69,7 @@ class Calculator extends Component {
               <Division firstValue={this.state.firstValue} secondValue={this.state.secondValue}/>      
             </div>
           </div>
-           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt15">
-            {/*<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-              <Result />      
-            </div>*/}
-          </div>
+          {/* check if value exist for input*/}
           {
             this.state.firstValue && this.state.secondValue ? 
             <h1>Result : {this.props.calculatedValue?this.props.calculatedValue:0}</h1>
@@ -86,6 +81,7 @@ class Calculator extends Component {
     );
   }
 }
+/* Get get calculated value of input and convent it into props*/
 const mapStateToProps = (state) => {
   console.log("state",state)
   return {
@@ -100,28 +96,6 @@ const mapDispatchToProps = (dispatch) => {
     }),
   }
 };
-/*const mapDispatchToProps = (dispatch) => {
-  return {
-    calculateOperationData: (calculatedValue) => dispatch({
-      type: "SUBTRACTION",
-      calculatedValue: calculatedValue,
-    }),
-  }
-};const mapDispatchToProps = (dispatch) => {
-  return {
-    calculateOperationData: (calculatedValue) => dispatch({
-      type: "MULTIPLICATION",
-      calculatedValue: calculatedValue,
-    }),
-  }
-};const mapDispatchToProps = (dispatch) => {
-  return {
-    calculateOperationData: (calculatedValue) => dispatch({
-      type: "DIVISION",
-      calculatedValue: calculatedValue,
-    }),
-  }
-};*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator);
 
